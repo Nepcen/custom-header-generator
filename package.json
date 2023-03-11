@@ -1,0 +1,107 @@
+{
+  "name": "custom-header-generator",
+  "displayName": "Custom Header Generator",
+  "description": "Generator for your beautiful header!",
+  "version": "1.0.0",
+  "engines": {
+    "vscode": "^1.76.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "main": "./extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "custom-header-generator.createHeader",
+        "category": "CHG",
+        "title": "Create Header"
+      }
+    ],
+    "keybindings": [
+      {
+        "command": "custom-header-generator.createHeader",
+        "key": "ctrl+h",
+        "mac": "cmd+h"
+      }
+    ],
+    "configuration": {
+      "title": "custom-header-generator",
+      "properties": {
+        "custom-header-generator.author": {
+          "type": "string",
+          "default": "",
+          "description": "Paste your name or nickname"
+        },
+        "custom-header-generator.mail": {
+          "type": "string",
+          "default": "",
+          "description": "Paste your mail"
+        },
+        "custom-header-generator.template": {
+          "type": "string",
+          "default": "  <@FILE_NAME@>                               \n  by: <@AUTHOR@>                              \n  mail: <@MAIL@>                              \n  created: <@CREATED_TIME@>                   ",
+          "description": "Paste your own header template"
+        },
+        "custom-header-generator.offset": {
+          "type": "number",
+          "default": 2,
+          "description": "You can set an offset value to not touch your template's line from beginning and end while generate header"
+        },
+        "custom-header-generator.extraspace": {
+          "type": "number",
+          "default": 0,
+          "description": "You can set an value to add extra space between comment chars and template"
+        },
+        "custom-header-generator.changeablechar": {
+          "type": "string",
+          "default": "",
+          "description": "You can set a char to change with languages special char while generate header"
+        },
+        "custom-header-generator.generatetype": {
+          "type": "string",
+          "default": "BEel",
+          "enum": [
+            "BE",
+            "Bel",
+            "BEel"
+          ],
+          "enumDescriptions": [
+            "At the beginning and end of template",
+            "At the beginning of each line",
+            "At the beginning and end of each line"
+          ],
+          "description": "Select your header generate style"
+        },
+        "custom-header-generator.dateformat": {
+          "type": "string",
+          "default": "DD/MM/YYYY HH:mm:ss",
+          "description": "Set your date format"
+        },
+        "custom-header-generator.customsetting": {
+          "type": "object",
+          "description": "You can set your own settings for each language"
+        }
+      }
+    }
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "pretest": "npm run lint",
+    "test": "node ./test/runTest.js"
+  },
+  "devDependencies": {
+    "@types/glob": "^8.0.0",
+    "@types/mocha": "^10.0.1",
+    "@types/node": "16.x",
+    "@types/vscode": "^1.76.0",
+    "@vscode/test-electron": "^2.2.0",
+    "eslint": "^8.28.0",
+    "glob": "^8.0.3",
+    "mocha": "^10.1.0",
+    "typescript": "^4.9.3"
+  },
+  "dependencies": {
+    "dayjs": "^1.11.7"
+  }
+}
