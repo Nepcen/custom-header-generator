@@ -1,11 +1,25 @@
 {
   "name": "custom-header-generator",
   "displayName": "Custom Header Generator",
+  "publisher": "Nepcen",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Nepcen/custom-header-generator.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Nepcen/custom-header-generator/issues"
+  },
+  "homepage": "https://github.com/Nepcen/custom-header-generator",
+  "license": "MIT",
   "description": "Generator for your beautiful header!",
   "version": "1.0.0",
   "engines": {
     "vscode": "^1.76.0"
   },
+  "activationEvents": [
+    ""
+  ],
+  "icon": "CHG.png",
   "categories": [
     "Other"
   ],
