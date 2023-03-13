@@ -2,6 +2,8 @@
 
 Generator for your beautiful header!
 
+Install: [VS Code Market](https://marketplace.visualstudio.com/items?itemName=Nepcen.custom-header-generator)
+
 Made by: [Nepcen](https://www.linkedin.com/in/yusufabacik/)
 
 ## Features
@@ -42,7 +44,7 @@ You can set your email. It will be replaced with `<@MAIL@>` in your template.
 You can create your own header template.
 
 ### offset
-You can set an offset value to avoid modifying lines at the beginning and end of your template when generating the header.
+You can set an offset value to avoid modifying the beginning and end of each line in your template when generating the header.
 
 ### extraspace
 You can set a value to add extra space between comment characters and your template.
